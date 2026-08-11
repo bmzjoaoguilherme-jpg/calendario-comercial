@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mamba Negra — Metas Individuais</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="wrap">
+
+  <div class="header">
+    <div class="logo-text">Mamba Negra</div>
+    <div class="edit-btn" id="editBtn">✎ Editar metas</div>
+    <div class="month-nav">
+      <div class="month-arrow" id="prevMonth">‹</div>
+      <div class="brand-sub" id="monthLabel">Agosto · 2026</div>
+      <div class="month-arrow" id="nextMonth">›</div>
+    </div>
+    <div class="divider">
+      <div class="line"></div>
+      <span>Metas Individuais</span>
+      <div class="line right"></div>
+    </div>
+  </div>
+
+  <div class="tabs" id="tabs"></div>
+
+  <div class="meta-bar">
+    <div class="meta-item">
+      <div class="meta-label" id="metaLabel1">Visão geral</div>
+      <div class="meta-value gold" id="metaName">Equipe</div>
+    </div>
+    <div class="meta-item">
+      <div class="meta-label">Meta do mês</div>
+      <div class="meta-value" id="metaTotal">67 contratos</div>
+    </div>
+    <div class="meta-item">
+      <div class="meta-label">Ritmo médio</div>
+      <div class="meta-value" id="metaRate">2,16 / dia</div>
+    </div>
+    <div class="meta-item">
+      <div class="meta-label">Fechados até hoje</div>
+      <div class="meta-value gold" id="metaActual">0</div>
+    </div>
+  </div>
+
+  <div class="weekdays">
+    <div>Dom</div><div>Seg</div><div>Ter</div><div>Qua</div><div>Qui</div><div>Sex</div><div>Sáb</div>
+  </div>
+
+  <div class="grid" id="grid"></div>
+
+  <div class="log-section">
+    <div class="log-header">
+      <div class="log-title">Registro de Fechamentos</div>
+      <div class="log-filter">
+        <label for="logFilterSelect">Vendedor</label>
+        <select id="logFilterSelect">
+          <option value="Todos">Todos</option>
+        </select>
+      </div>
+    </div>
+    <table class="log-table">
+      <thead>
+        <tr><th>Data</th><th>Vendedor</th><th>Contratos</th></tr>
+      </thead>
+      <tbody id="logBody"></tbody>
+    </table>
+    <div class="log-empty" id="logEmpty" style="display:none;">Nenhum fechamento registrado ainda.</div>
+  </div>
+
+  <div class="footer">
+    <div class="legend-item"><span class="dot"></span> Número grande = meta acumulada até aquele dia</div>
+    <div class="legend-item"><span style="color:var(--gold)">▲</span> = contratos a fechar naquele dia específico</div>
+  </div>
+
+</div>
+
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal">
+    <div class="modal-title">Editar metas — <span id="modalMonthName"></span></div>
+    <div class="modal-sub">Grupo e individual de cada pessoa</div>
+    <div class="modal-hint">Ao salvar, os contratos de cada dia são redistribuídos igualmente ao longo do mês para manter o ritmo em dia com a nova meta.</div>
+    <div id="modalBody"></div>
+    <div class="modal-actions">
+      <div class="modal-btn" id="modalCancel">Cancelar</div>
+      <div class="modal-btn primary" id="modalSave">Salvar</div>
+    </div>
+  </div>
+</div>
+
+<script src="js/app.js"></script>
+</body>
+</html>
